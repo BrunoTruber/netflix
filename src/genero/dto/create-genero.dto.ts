@@ -5,6 +5,7 @@ export class CreateGeneroDto {
   @IsNotEmpty()
   nome: string;
 
-  // @IsOptional()
-  //generoId: number;
+  //@IsNotEmpty()
+  filmes: number[];
+
 }

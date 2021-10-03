@@ -3,18 +3,23 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { Prisma, Genero } from '.prisma/client';
+import { CreateGeneroDto } from './dto/create-genero.dto';
+import { UpdateGeneroDto } from './dto/update-genero.dto';
 
 @Injectable()
 export class GeneroService {
   //genero: any;
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async getAll(): Promise<Genero[]> {
     return this.prisma.genero.findMany();
   }
 
-  async createGenero(data: Prisma.GeneroCreateInput): Promise<Genero> {
-    return this.prisma.genero.create({ data });
+
+  async createGenero(genero: CreateGeneroDto) {
+    return this.prisma.genero.create({ 
+      data: genero
+    });
   }
 
   async deleteOneGenero(where: Prisma.GeneroWhereUniqueInput): Promise<Genero> {
@@ -26,13 +31,15 @@ export class GeneroService {
   }
 
   async updateOneGenero(
-    generoId: number,
-    data: Prisma.GeneroCreateInput,
-  ): Promise<Genero> {
+    id: number,
+    genero: UpdateGeneroDto) {
     return this.prisma.genero.update({
-      data,
+      data: {
+        ...genero,
+        id: undefined,
+      },
       where: {
-        id: generoId,
+        id,
       },
     });
   }

@@ -15,13 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ParticipantesController = void 0;
 const common_1 = require("@nestjs/common");
 const create_participantes_dto_1 = require("./dto/create-participantes.dto");
+const update_participante_dto_1 = require("./dto/update-participante.dto");
 const participantes_service_1 = require("./participantes.service");
 let ParticipantesController = class ParticipantesController {
     constructor(participantesService) {
         this.participantesService = participantesService;
     }
-    async create(createParticipante) {
-        return this.participantesService.createParticipante({ createParticipante });
+    async create(participantesService) {
+        return this.participantesService.createParticipante(participantesService);
     }
     async findMany() {
         return this.participantesService.getAll();
@@ -75,7 +76,7 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Param)('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_participantes_dto_1.CreateParticipanteDto, Number]),
+    __metadata("design:paramtypes", [update_participante_dto_1.UpdateParticipanteDto, Number]),
     __metadata("design:returntype", Promise)
 ], ParticipantesController.prototype, "update", null);
 __decorate([

@@ -19,8 +19,10 @@ let GeneroService = class GeneroService {
     async getAll() {
         return this.prisma.genero.findMany();
     }
-    async createGenero(data) {
-        return this.prisma.genero.create({ data });
+    async createGenero(genero) {
+        return this.prisma.genero.create({
+            data: genero
+        });
     }
     async deleteOneGenero(where) {
         return this.prisma.genero.delete({ where });
@@ -28,11 +30,11 @@ let GeneroService = class GeneroService {
     async deletAllGeneros() {
         return this.prisma.genero.deleteMany();
     }
-    async updateOneGenero(generoId, data) {
+    async updateOneGenero(id, genero) {
         return this.prisma.genero.update({
-            data,
+            data: Object.assign(Object.assign({}, genero), { id: undefined }),
             where: {
-                id: generoId,
+                id,
             },
         });
     }

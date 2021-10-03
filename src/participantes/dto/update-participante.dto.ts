@@ -1,7 +1,11 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsNumber } from 'class-validator';
 
-export class CreateParticipanteDto {
+export class UpdateParticipanteDto {
+
+  @IsNumber()
+  id: number;
+
   @IsNotEmpty()
   nome: string;
 
@@ -13,8 +17,4 @@ export class CreateParticipanteDto {
 
   @IsNotEmpty()
   staff: string;
-
-  
-  // @IsNotEmpty()
-  filmes: number[];
 }

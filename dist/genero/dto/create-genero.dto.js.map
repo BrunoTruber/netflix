@@ -1,1 +1,1 @@
-{"version":3,"file":"create-genero.dto.js","sourceRoot":"","sources":["../../../src/genero/dto/create-genero.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AACA,qDAA6C;AAE7C,MAAa,eAAe;CAM3B;AAJC;IADC,IAAA,4BAAU,GAAE;;6CACA;AAFf,0CAMC"}
+{"version":3,"file":"create-genero.dto.js","sourceRoot":"","sources":["../../../src/genero/dto/create-genero.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AACA,qDAA6C;AAE7C,MAAa,eAAe;CAO3B;AALC;IADC,IAAA,4BAAU,GAAE;;6CACA;AAFf,0CAOC"}

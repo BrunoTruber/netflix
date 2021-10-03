@@ -16,19 +16,9 @@ let ParticipantesService = class ParticipantesService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async createParticipante(data) {
+    async createParticipante(participante) {
         return this.prisma.participante.create({
-            data: {
-                nome,
-                imagem,
-                data_nascimento,
-                staff,
-                filmes: {
-                    connect: {
-                        id: [2]
-                    },
-                },
-            }
+            data: participante,
         });
     }
     async getAll() {
@@ -40,11 +30,11 @@ let ParticipantesService = class ParticipantesService {
     async deletAllParticipantes() {
         return this.prisma.participante.deleteMany();
     }
-    async updateOneParticipante(participanteId, data) {
-        return this.prisma.participante.update({
-            data,
+    async updateOneParticipante(id, participante) {
+        return await this.prisma.participante.update({
+            data: Object.assign(Object.assign({}, participante), { id: undefined }),
             where: {
-                id: participanteId,
+                id,
             },
         });
     }

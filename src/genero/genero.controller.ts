@@ -12,6 +12,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { CreateGeneroDto } from './dto/create-genero.dto';
+import { UpdateGeneroDto } from './dto/update-genero.dto';
 import { GeneroService } from './genero.service';
 import { Genero } from '.prisma/client';
 
@@ -46,9 +47,9 @@ export class GeneroController {
   @Put('/update/:id')
   @UsePipes(ValidationPipe)
   async update(
-    @Body() updateGenero: CreateGeneroDto,
+    @Body() updateGenero: UpdateGeneroDto,
     @Param('id', ParseIntPipe) id: number,
-  ): Promise<Genero> {
+  ): Promise<Genero>{
     return this.generoService.updateOneGenero(id, updateGenero);
   }
 

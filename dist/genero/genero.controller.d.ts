@@ -1,4 +1,5 @@
 import { CreateGeneroDto } from './dto/create-genero.dto';
+import { UpdateGeneroDto } from './dto/update-genero.dto';
 import { GeneroService } from './genero.service';
 import { Genero } from '.prisma/client';
 export declare class GeneroController {
@@ -8,6 +9,6 @@ export declare class GeneroController {
     create(createGenero: CreateGeneroDto): Promise<Genero>;
     delete(id: string): Promise<Genero>;
     deleteMany(): Promise<import(".prisma/client").Prisma.BatchPayload>;
-    update(updateGenero: CreateGeneroDto, id: number): Promise<Genero>;
+    update(updateGenero: UpdateGeneroDto, id: number): Promise<Genero>;
     findUnique(id: number): Promise<Genero>;
 }

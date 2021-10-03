@@ -19,8 +19,25 @@ let FilmesService = class FilmesService {
     async getAll() {
         return this.prisma.filme.findMany();
     }
-    async createFilme(data) {
-        return this.prisma.filme.create({ data });
+    async createFilme(filme) {
+        var _a;
+        const generos = (_a = filme.generos) === null || _a === void 0 ? void 0 : _a.map((genero) => ({
+            id: genero,
+        }));
+        return this.prisma.filme.create({
+            data: {
+                nome: filme.nome,
+                imagem: filme.imagem,
+                data_lancamento: filme.data_lancamento,
+                tempo_duracao: filme.tempo_duracao,
+                genero: {
+                    connect: generos,
+                },
+            },
+            include: {
+                genero: true,
+            }
+        });
     }
     async deleteOneFilme(where) {
         return this.prisma.filme.delete({ where });
@@ -28,12 +45,12 @@ let FilmesService = class FilmesService {
     async deletAllFilmes() {
         return this.prisma.filme.deleteMany();
     }
-    async updateOneFilme(filmeId, data) {
-        return this.prisma.filme.update({
-            data,
+    async updateOneFilme(id, filme) {
+        return await this.prisma.filme.update({
+            data: Object.assign(Object.assign({}, filme), { id: undefined }),
             where: {
-                id: filmeId,
-            },
+                id,
+            }
         });
     }
     async getOneFilme(filmeId) {

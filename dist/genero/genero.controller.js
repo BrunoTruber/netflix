@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneroController = void 0;
 const common_1 = require("@nestjs/common");
 const create_genero_dto_1 = require("./dto/create-genero.dto");
+const update_genero_dto_1 = require("./dto/update-genero.dto");
 const genero_service_1 = require("./genero.service");
 let GeneroController = class GeneroController {
     constructor(generoService) {
@@ -75,7 +76,7 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Param)('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_genero_dto_1.CreateGeneroDto, Number]),
+    __metadata("design:paramtypes", [update_genero_dto_1.UpdateGeneroDto, Number]),
     __metadata("design:returntype", Promise)
 ], GeneroController.prototype, "update", null);
 __decorate([

@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FilmesController = void 0;
 const common_1 = require("@nestjs/common");
 const create_filme_dto_1 = require("./dto/create-filme.dto");
+const update_filme_dto_1 = require("./dto/update-filme.dto");
 const filmes_service_1 = require("./filmes.service");
 let FilmesController = class FilmesController {
     constructor(filmesService) {
@@ -75,7 +76,7 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Param)('id', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_filme_dto_1.CreateFilmeDto, Number]),
+    __metadata("design:paramtypes", [update_filme_dto_1.UpdateFilmeDto, Number]),
     __metadata("design:returntype", Promise)
 ], FilmesController.prototype, "update", null);
 __decorate([

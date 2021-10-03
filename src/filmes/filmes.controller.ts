@@ -12,6 +12,7 @@ import {
   ParseIntPipe,
 } from '@nestjs/common';
 import { CreateFilmeDto } from './dto/create-filme.dto';
+import { UpdateFilmeDto } from './dto/update-filme.dto';
 import { FilmesService } from './filmes.service';
 import { Filme } from '.prisma/client';
 
@@ -50,7 +51,7 @@ export class FilmesController {
   @Put('/update/:id')
   @UsePipes(ValidationPipe)
   async update(
-    @Body() updateFilme: CreateFilmeDto,
+    @Body() updateFilme: UpdateFilmeDto,
     @Param('id', ParseIntPipe) id: number,
   ): Promise<Filme> {
     return this.filmesService.updateOneFilme(id, updateFilme);

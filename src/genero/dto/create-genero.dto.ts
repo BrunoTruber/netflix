@@ -5,7 +5,7 @@ export class CreateGeneroDto {
   @IsNotEmpty()
   nome: string;
 
-  //@IsNotEmpty()
+  @IsNotEmpty()
   filmes: number[];
 
 }

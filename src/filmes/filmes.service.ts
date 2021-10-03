@@ -7,7 +7,7 @@ import { UpdateFilmeDto } from './dto/update-filme.dto';
 
 @Injectable() //oque esse Injectable esta fazendo?
 export class FilmesService {
-  filme: any; // de onde veio esse filme e porque?
+  //filme: any; // de onde veio esse filme e porque?
 
   // prisma virou PrismaService?
   constructor(private readonly prisma: PrismaService) {}
@@ -18,9 +18,13 @@ export class FilmesService {
   }
 
   async createFilme(filme: CreateFilmeDto) {
-    const generos = filme.generos?.map((genero) => ({
+    const generos = filme.genero?.map((genero) => ({
       id: genero,
     }));
+
+    const participantes = filme.participantes.map((participante) => ({
+      id: participante,
+    }))
 
     return this.prisma.filme.create({
       data: {
@@ -31,17 +35,17 @@ export class FilmesService {
         genero: {
           connect: generos,
         },
+        participantes: {
+          connect: participantes,
+        }
       },
       include: {
         genero: true,
+        participantes: true,
       }
     });
   }
-
-  // data virou Prisma.FilmeCreateInput? de onde veio FilmeCreateInput?
-  // async createFilme(data: Prisma.FilmeCreateInput): Promise<Filme> {
-  //   return this.prisma.filme.create({ data });
-  // }
+    
 
   async deleteOneFilme(where: Prisma.FilmeWhereUniqueInput): Promise<Filme> {
     return this.prisma.filme.delete({ where });

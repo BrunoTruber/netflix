@@ -29,5 +29,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateParticipanteDto.prototype, "staff", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Array)
+], CreateParticipanteDto.prototype, "filmes", void 0);
 exports.CreateParticipanteDto = CreateParticipanteDto;
 //# sourceMappingURL=create-participantes.dto.js.map

@@ -27,7 +27,7 @@ model Participante {
   imagem  String
   data_nascimento Int
   staff String
-  filmes Filme[]
+  filme Filme[]
 
 }
 

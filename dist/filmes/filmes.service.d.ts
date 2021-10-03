@@ -4,11 +4,11 @@ import { CreateFilmeDto } from './dto/create-filme.dto';
 import { UpdateFilmeDto } from './dto/update-filme.dto';
 export declare class FilmesService {
     private readonly prisma;
-    filme: any;
     constructor(prisma: PrismaService);
     getAll(): Promise<Filme[]>;
     createFilme(filme: CreateFilmeDto): Promise<Filme & {
         genero: import(".prisma/client").Genero[];
+        participantes: import(".prisma/client").Participante[];
     }>;
     deleteOneFilme(where: Prisma.FilmeWhereUniqueInput): Promise<Filme>;
     deletAllFilmes(): Promise<Prisma.BatchPayload>;

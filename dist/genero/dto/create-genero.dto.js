@@ -17,5 +17,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], CreateGeneroDto.prototype, "nome", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Array)
+], CreateGeneroDto.prototype, "filmes", void 0);
 exports.CreateGeneroDto = CreateGeneroDto;
 //# sourceMappingURL=create-genero.dto.js.map

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateFilmeDto {
@@ -14,7 +13,9 @@ export class CreateFilmeDto {
   @IsNotEmpty()
   tempo_duracao: number;
 
-  generos: []
-  
-  participantes:[]
+  @IsOptional()
+  genero: number[];
+
+  @IsOptional()
+  participantes: number[];
 }

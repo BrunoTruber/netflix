@@ -15,6 +15,6 @@ export class CreateParticipanteDto {
   staff: string;
 
   
-  // @IsNotEmpty()
+   @IsNotEmpty()
   filmes: number[];
 }

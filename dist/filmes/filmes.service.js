@@ -21,8 +21,11 @@ let FilmesService = class FilmesService {
     }
     async createFilme(filme) {
         var _a;
-        const generos = (_a = filme.generos) === null || _a === void 0 ? void 0 : _a.map((genero) => ({
+        const generos = (_a = filme.genero) === null || _a === void 0 ? void 0 : _a.map((genero) => ({
             id: genero,
+        }));
+        const participantes = filme.participantes.map((participante) => ({
+            id: participante,
         }));
         return this.prisma.filme.create({
             data: {
@@ -33,9 +36,13 @@ let FilmesService = class FilmesService {
                 genero: {
                     connect: generos,
                 },
+                participantes: {
+                    connect: participantes,
+                }
             },
             include: {
                 genero: true,
+                participantes: true,
             }
         });
     }

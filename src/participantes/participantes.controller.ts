@@ -22,20 +22,8 @@ export class ParticipantesController {
 
   @Post('/create')
   @UsePipes(ValidationPipe)
-  async create(@Body() participantesService: CreateParticipanteDto) {
-    // const { nome, filmeId, imagem, data_nascimento, staff, filmes } =
-    //   createParticipante;
+  async create(@Body() participantesService: CreateParticipanteDto): Promise<Participante>{
        return this.participantesService.createParticipante(participantesService);
-      // nome,
-      // imagem,
-      // data_nascimento,
-      // staff,
-      // filmes: {
-      //   connect: {
-      //     id: [2]
-      //   },
-      // },
-    //});
   }
 
   @Get('/list')

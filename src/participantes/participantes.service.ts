@@ -18,38 +18,7 @@ export class ParticipantesService {
     return this.prisma.participante.create({
       data: participante,
     })
-
-    // return this.prisma.participante.create({
-    //   data: {
-    //     nome: participante.nome,
-    //     imagem: participante.imagem,
-    //     data_nascimento: participante.data_nascimento,
-    //     staff: participante.staff,
-    //     filmes: {
-    //       connect: filmes,
-    //     },
-    //   },
-    //   include: {
-    //     filmes: true,
-    //   }
-    // });
   }
-
-  // async createParticipante(data: Prisma.ParticipanteCreateInput,): Promise<Participante> {
-  //   return this.prisma.participante.create({ data
-  //     // data:{
-  //     // nome,
-  //     // imagem,
-  //     // data_nascimento,
-  //     // staff,
-  //     // filmes: {
-  //     //   connect: {
-  //     //     id: [2]
-  //     //   },
-  //     // },
-  //     // }
-  //   });
-  //}
 
   async getAll(): Promise<Participante[]> {
     return this.prisma.participante.findMany();
@@ -77,17 +46,7 @@ export class ParticipantesService {
       },
     });
   }
-  // async updateOneParticipante(
-  //   participanteId: number,
-  //   data: Prisma.ParticipanteCreateInput,
-  // ): Promise<Participante> {
-  //   return this.prisma.participante.update({
-  //     data,
-  //     where: {
-  //       id: participanteId,
-  //     },
-  //   });
-  // }
+  
   async getOneParticipante(participanteId: number): Promise<Participante> {
     return this.prisma.participante.findUnique({
       where: {

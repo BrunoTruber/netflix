@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateParticipanteDto {
   @IsNotEmpty()
@@ -14,7 +14,6 @@ export class CreateParticipanteDto {
   @IsNotEmpty()
   staff: string;
 
-  
-   @IsNotEmpty()
+  @IsOptional()
   filmes: number[];
 }

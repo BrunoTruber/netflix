@@ -23,7 +23,8 @@ __decorate([
 ], CreateFilmeDto.prototype, "imagem", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", Number)
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
 ], CreateFilmeDto.prototype, "data_lancamento", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),

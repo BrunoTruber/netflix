@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty, IsNumber } from 'class-validator';
+import { IsDate, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class UpdateParticipanteDto {
 
@@ -13,7 +13,8 @@ export class UpdateParticipanteDto {
   imagem: string;
 
   @IsNotEmpty()
-  data_nascimento: number;
+  @IsDate()
+  data_nascimento: Date;
 
   @IsNotEmpty()
   staff: string;

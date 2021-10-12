@@ -6,10 +6,7 @@ export declare class FilmesService {
     private readonly prisma;
     constructor(prisma: PrismaService);
     getAll(): Promise<Filme[]>;
-    createFilme(filme: CreateFilmeDto): Promise<Filme & {
-        genero: import(".prisma/client").Genero[];
-        participantes: import(".prisma/client").Participante[];
-    }>;
+    createFilme(filme: CreateFilmeDto): Promise<Filme>;
     deleteOneFilme(where: Prisma.FilmeWhereUniqueInput): Promise<Filme>;
     deletAllFilmes(): Promise<Prisma.BatchPayload>;
     updateOneFilme(id: number, filme: UpdateFilmeDto): Promise<Filme>;

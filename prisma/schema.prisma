@@ -14,7 +14,7 @@ model Filme {
   id     Int     @id @default(autoincrement())
   nome   String
   imagem String?
-  data_lancamento DateTime
+  data_lancamento String
   tempo_duracao Int
   genero Genero[]
   participantes Participante[]
@@ -25,7 +25,7 @@ model Participante {
   id        Int      @default(autoincrement()) @id
   nome     String
   imagem  String
-  data_nascimento DateTime
+  data_nascimento String
   staff String
   filme Filme[]
 

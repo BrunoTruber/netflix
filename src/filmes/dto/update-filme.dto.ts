@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty, IsOptional, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsNumber, IsDate } from 'class-validator';
 
 export class UpdateFilmeDto {
   @IsNumber()
@@ -12,7 +12,8 @@ export class UpdateFilmeDto {
   imagem: string;
 
   @IsNotEmpty()
-  data_lancamento: number;
+  @IsDate()
+  data_lancamento: Date;
 
   @IsNotEmpty()
   tempo_duracao: number;

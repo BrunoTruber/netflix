@@ -27,8 +27,7 @@ __decorate([
 ], UpdateParticipanteDto.prototype, "imagem", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsDate)(),
-    __metadata("design:type", Date)
+    __metadata("design:type", String)
 ], UpdateParticipanteDto.prototype, "data_nascimento", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),

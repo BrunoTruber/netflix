@@ -27,8 +27,7 @@ __decorate([
 ], UpdateFilmeDto.prototype, "imagem", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsDate)(),
-    __metadata("design:type", Date)
+    __metadata("design:type", String)
 ], UpdateFilmeDto.prototype, "data_lancamento", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),

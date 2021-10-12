@@ -23,8 +23,7 @@ __decorate([
 ], CreateParticipanteDto.prototype, "imagem", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsDate)(),
-    __metadata("design:type", Date)
+    __metadata("design:type", String)
 ], CreateParticipanteDto.prototype, "data_nascimento", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),

@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsDate } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateFilmeDto {
   @IsNotEmpty()
@@ -8,8 +8,7 @@ export class CreateFilmeDto {
   imagem: string;
 
   @IsNotEmpty()
-  @IsDate()
-  data_lancamento: Date;
+  data_lancamento: string;
 
   @IsNotEmpty()
   tempo_duracao: number;
